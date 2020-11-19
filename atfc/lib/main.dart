@@ -13,7 +13,7 @@ class MAGICUI extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
-          color: Colors.transparent,
+          color: Colors.white,
           elevation: 0.0,
         ),
         scaffoldBackgroundColor: Colors.white,

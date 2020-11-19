@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "661486225518",
+    "firebase_url": "https://atteface.firebaseio.com",
+    "project_id": "atteface",
+    "storage_bucket": "atteface.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661486225518:android:a188d172a89d967b023e7f",
+        "android_client_info": {
+          "package_name": "com.abhinav.atfc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661486225518-sk7h9vouu75thlsca5nnvfvp4lsigjgu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRX8zsZn8BDReo6Ak2hXvc69ghh8BSzu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661486225518-sk7h9vouu75thlsca5nnvfvp4lsigjgu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
