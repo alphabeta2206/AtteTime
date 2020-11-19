@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
   Register({Key key}) : super(key: key);
@@ -12,12 +13,46 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("Atteface"),
+        title: Text("Atteface"),
         backgroundColor: Colors.green[400],
       ),
-      body: Container(
-        child:Text("hello")
-      ),
+      body: Padding(
+          padding: EdgeInsets.fromLTRB(15, 200, 15, 10),
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Enter Email",
+                ),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Enter Password",
+                  )),
+              SizedBox(height: 10),
+              TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Confirm Password",
+                  )),
+                  SizedBox(height: 10),
+              GestureDetector(
+                  onTap: () => {},
+                  child: Container(
+                      //height:30,
+                      //width:100,
+                      padding: EdgeInsets.fromLTRB(150, 15, 150, 15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.blue),
+                      child: Text("Register"))),
+            ],
+          )),
     );
   }
 }

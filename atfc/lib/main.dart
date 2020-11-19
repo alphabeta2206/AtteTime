@@ -1,3 +1,4 @@
+import 'package:atfc/signin.dart';
 import 'package:atfc/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MAGICUI extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: Register(),
+      home: Login(),
     );
   }
 }
