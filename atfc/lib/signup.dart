@@ -9,6 +9,9 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  TextEditingController _confirmpassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
