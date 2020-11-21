@@ -24,6 +24,7 @@ class _LoginState extends State<Login> {
             child: Column(
               children: [
                 TextField(
+                  controller: _email,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Enter Email",
@@ -31,6 +32,7 @@ class _LoginState extends State<Login> {
                 ),
                 SizedBox(height: 10),
                 TextField(
+                    controller: _password,
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),

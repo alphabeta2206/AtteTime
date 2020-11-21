@@ -24,6 +24,7 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: [
               TextField(
+                controller: _email,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Enter Email",
@@ -31,6 +32,7 @@ class _RegisterState extends State<Register> {
               ),
               SizedBox(height: 10),
               TextField(
+                  controller: _password,
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -38,6 +40,7 @@ class _RegisterState extends State<Register> {
                   )),
               SizedBox(height: 10),
               TextField(
+                controller: _confirmpassword,
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
