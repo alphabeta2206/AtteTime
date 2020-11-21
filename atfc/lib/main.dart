@@ -3,8 +3,8 @@ import 'package:atfc/signup.dart';
 import 'package:flutter/material.dart';
 
 
-void main() => runApp(MAGICUI());
-class MAGICUI extends StatelessWidget {
+void main() async => runApp(ATFC());
+class ATFC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
