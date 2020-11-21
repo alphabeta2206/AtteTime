@@ -12,6 +12,8 @@ class _RegisterState extends State<Register> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
+
+  void onRegister() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,13 +42,13 @@ class _RegisterState extends State<Register> {
                   )),
               SizedBox(height: 10),
               TextField(
-                controller: _confirmpassword,
+                  controller: _confirmpassword,
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Confirm Password",
                   )),
-                  SizedBox(height: 10),
+              SizedBox(height: 10),
               GestureDetector(
                   onTap: () => {},
                   child: Container(
