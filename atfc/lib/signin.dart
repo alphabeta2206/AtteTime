@@ -1,3 +1,4 @@
+import 'package:atfc/home.dart';
 import 'package:atfc/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -69,6 +70,11 @@ class _LoginState extends State<Login> {
                         setState(() {
                           showProgress = false;
                         });
+
+                        Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Home()));
                       }
                           } 
                           catch (e) {}
