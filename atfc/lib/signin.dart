@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
 
@@ -54,30 +55,40 @@ class _LoginState extends State<Login> {
                             showProgress = true;
                           });
                           try {
-                            final newUser = await _auth.signInWithEmailAndPassword(
-                              email: _email.text, password: _password.text);
-                              print(newUser.toString());
+                            final newUser =
+                                await _auth.signInWithEmailAndPassword(
+                                    email: _email.text,
+                                    password: _password.text);
+                            print(newUser.toString());
 
-                              if (newUser != null) {
-                        Fluttertoast.showToast(
-                            msg: "Login Successfull",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.blueAccent,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
-                        setState(() {
-                          showProgress = false;
-                        });
+                            if (newUser != null) {
+                              Fluttertoast.showToast(
+                                  msg: "Login Successfull",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.blueAccent,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                              setState(() {
+                                showProgress = false;
+                              });
 
-                        Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
-                      }
-                          } 
-                          catch (e) {}
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()));
+                            } else {
+                              Fluttertoast.showToast(
+                                  msg: "No such user found",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.blueAccent,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            }
+                          } catch (e) {}
                         },
                         child: Container(
                             //height:30,

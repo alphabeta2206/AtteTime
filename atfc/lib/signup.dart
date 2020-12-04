@@ -69,7 +69,14 @@ class _RegisterState extends State<Register> {
                                   email: _email.text, password: _password.text);
 
                           if (newuser != null) {
-                            
+                            Fluttertoast.showToast(
+                            msg: "Signup Successfull",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.blueAccent,
+                            textColor: Colors.white,
+                            fontSize: 16.0);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
