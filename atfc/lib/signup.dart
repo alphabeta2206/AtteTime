@@ -9,6 +9,9 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final _auth = FirebaseAuth.instance;
+  bool showProgress = false;
+
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
@@ -50,7 +53,9 @@ class _RegisterState extends State<Register> {
                   )),
               SizedBox(height: 10),
               GestureDetector(
-                  onTap: () => {},
+                  onTap: () => {
+                    
+                  },
                   child: Container(
                       //height:30,
                       //width:100,
