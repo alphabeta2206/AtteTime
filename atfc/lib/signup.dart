@@ -14,7 +14,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final _auth = FirebaseAuth.instance;
   bool showProgress = false;
-
+  String errorMessage;
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
