@@ -2,6 +2,7 @@ import 'package:atfc/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Register extends StatefulWidget {
   Register({Key key}) : super(key: key);
@@ -66,8 +67,9 @@ class _RegisterState extends State<Register> {
                           final newuser =
                               await _auth.createUserWithEmailAndPassword(
                                   email: _email.text, password: _password.text);
-                                  
+
                           if (newuser != null) {
+                            
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
