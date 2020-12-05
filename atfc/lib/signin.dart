@@ -79,15 +79,6 @@ class _LoginState extends State<Login> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => Home()));
-                            } else {
-                              Fluttertoast.showToast(
-                                  msg: "No such user found",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.CENTER,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.blueAccent,
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
                             }
                           } catch (error) {
                             switch (error.code) {
