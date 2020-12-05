@@ -71,59 +71,63 @@ class _RegisterState extends State<Register> {
                                 textColor: Colors.white,
                                 fontSize: 16.0);
                           });
-                        } else
+                        } else {
                           setState(() {
                             showProgress = true;
                           });
-                        try {
-                          final newuser =
-                              await _auth.createUserWithEmailAndPassword(
-                                  email: _email.text, password: _password.text);
+                          Future.delayed(const Duration(seconds: 1), () async {
+                            try {
+                              final newuser =
+                                  await _auth.createUserWithEmailAndPassword(
+                                      email: _email.text,
+                                      password: _password.text);
 
-                          if (newuser != null) {
-                            Fluttertoast.showToast(
-                                msg: "Signup Successfull",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.blueAccent,
-                                textColor: Colors.white,
-                                fontSize: 16.0);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Login()));
-                          }
-                          setState(() {
-                            showProgress = false;
+                              if (newuser != null) {
+                                Fluttertoast.showToast(
+                                    msg: "Signup Successfull",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.blueAccent,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Login()));
+                              }
+                              setState(() {
+                                showProgress = false;
+                              });
+                            } on FirebaseAuthException catch (error) {
+                              if (error.code == 'weak-password') {
+                                Fluttertoast.showToast(
+                                    msg: "Weak Password",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.blueAccent,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                                setState(() {
+                                  showProgress = false;
+                                });
+                              } else if (error.code == 'email-already-in-use') {
+                                Fluttertoast.showToast(
+                                    msg: "This email already exists",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.blueAccent,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                                setState(() {
+                                  showProgress = false;
+                                });
+                              }
+                            } catch (error) {}
                           });
-                        } on FirebaseAuthException catch (error) {
-                          if (error.code == 'weak-password') {
-                            Fluttertoast.showToast(
-                                msg: "Weak Password",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.blueAccent,
-                                textColor: Colors.white,
-                                fontSize: 16.0);
-                            setState(() {
-                              showProgress = false;
-                            });
-                          } else if (error.code == 'email-already-in-use') {
-                            Fluttertoast.showToast(
-                                msg: "This email already exists",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.blueAccent,
-                                textColor: Colors.white,
-                                fontSize: 16.0);
-                            setState(() {
-                              showProgress = false;
-                            });
-                          }
-                        } catch (error) {}
+                        }
                       },
                       child: Container(
                           //height:30,
