@@ -60,9 +60,21 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 10),
                   GestureDetector(
                       onTap: () async {
-                        setState(() {
-                          showProgress = true;
-                        });
+                        if (_password.text != _confirmpassword.text) {
+                          setState(() {
+                            Fluttertoast.showToast(
+                                msg: "Check Password",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.blueAccent,
+                                textColor: Colors.white,
+                                fontSize: 16.0);
+                          });
+                        } else
+                          setState(() {
+                            showProgress = true;
+                          });
                         try {
                           final newuser =
                               await _auth.createUserWithEmailAndPassword(
@@ -88,28 +100,28 @@ class _RegisterState extends State<Register> {
                         } on FirebaseAuthException catch (error) {
                           if (error.code == 'weak-password') {
                             Fluttertoast.showToast(
-                                  msg: "Weak Password",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.CENTER,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.blueAccent,
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
-                              setState(() {
-                                showProgress = false;
-                              });
+                                msg: "Weak Password",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.blueAccent,
+                                textColor: Colors.white,
+                                fontSize: 16.0);
+                            setState(() {
+                              showProgress = false;
+                            });
                           } else if (error.code == 'email-already-in-use') {
                             Fluttertoast.showToast(
-                                  msg: "This email already exists",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.CENTER,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.blueAccent,
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
-                              setState(() {
-                                showProgress = false;
-                              });
+                                msg: "This email already exists",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.blueAccent,
+                                textColor: Colors.white,
+                                fontSize: 16.0);
+                            setState(() {
+                              showProgress = false;
+                            });
                           }
                         } catch (error) {}
                       },

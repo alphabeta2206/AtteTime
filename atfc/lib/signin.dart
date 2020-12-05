@@ -61,7 +61,6 @@ class _LoginState extends State<Login> {
                                     email: _email.text,
                                     password: _password.text);
                             print(newUser.toString());
-
                             if (newUser != null) {
                               Fluttertoast.showToast(
                                   msg: "Login Successfull",
