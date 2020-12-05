@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                                 showProgress = false;
                               });
                             }
-                          } 
+                          } catch (error) {}
                         },
                         child: Container(
                             //height:30,
