@@ -74,45 +74,38 @@ class _LoginState extends State<Login> {
                               setState(() {
                                 showProgress = false;
                               });
-
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => Home()));
                             }
-                          } catch (error) {
-                            switch (error.code) {
-                              case "ERROR_INVALID_EMAIL":
-                                errorMessage =
-                                    "Your email address appears to be malformed.";
-                                break;
-                              case "ERROR_WRONG_PASSWORD":
-                                errorMessage = "Your password is wrong.";
-                                break;
-                              case "ERROR_USER_NOT_FOUND":
-                                errorMessage =
-                                    "User with this email doesn't exist.";
-                                break;
-                              case "ERROR_USER_DISABLED":
-                                errorMessage =
-                                    "User with this email has been disabled.";
-                                break;
-                              case "ERROR_TOO_MANY_REQUESTS":
-                                errorMessage =
-                                    "Too many requests. Try again later.";
-                                break;
-                              case "ERROR_OPERATION_NOT_ALLOWED":
-                                errorMessage =
-                                    "Signing in with Email and Password is not enabled.";
-                                break;
-                              default:
-                                errorMessage = "An undefined Error happened.";
+                          } on FirebaseAuthException catch (error) {
+                            if (error.code == 'user-not-found') {
+                              Fluttertoast.showToast(
+                                  msg: "No such User",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.blueAccent,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                              setState(() {
+                                showProgress = false;
+                              });
+                            } else if (error.code == 'wrong-password') {
+                              Fluttertoast.showToast(
+                                  msg: "Incorrect password",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.blueAccent,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                              setState(() {
+                                showProgress = false;
+                              });
                             }
-                          }
-                          if (errorMessage != null) {
-                            return Future.error(errorMessage);
-                          }
-
+                          } 
                         },
                         child: Container(
                             //height:30,
