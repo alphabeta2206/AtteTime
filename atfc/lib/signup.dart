@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
                                   await _auth.createUserWithEmailAndPassword(
                                       email: _email.text,
                                       password: _password.text);
-
+ 
                               if (newuser != null) {
                                 Fluttertoast.showToast(
                                     msg: "Signup Successfull",
