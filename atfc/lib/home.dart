@@ -6,7 +6,6 @@ class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-
 class _HomeState extends State<Home> {
   var days = [
     'Monday',
@@ -17,7 +16,6 @@ class _HomeState extends State<Home> {
     'Saturday',
     'Sunday'
   ];
-  int x;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,13 +26,13 @@ class _HomeState extends State<Home> {
             title: Text('Timetable'),
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[0]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[1]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[2]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[3]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[4]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[5]),
-                Tab(icon: Icon(Icons.calendar_view_day), text: days[6]),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Mon'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Tue'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Wed'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Thu'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Fri'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Sat'),
+                Tab(icon: Icon(Icons.calendar_today), text: 'Sun'),
               ],
             ),
           ),
