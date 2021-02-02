@@ -92,8 +92,10 @@ class _HomeState extends State<Home> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Addslot()));
+                context, MaterialPageRoute(builder: (context) => Addslot()),
+                );
           },
+          child:Icon(Icons.add)
         ));
   }
 }
