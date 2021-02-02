@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -6,6 +10,7 @@ class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
+
 class _HomeState extends State<Home> {
   var days = [
     'Monday',
@@ -18,12 +23,13 @@ class _HomeState extends State<Home> {
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
+    return Scaffold(
+        body: Center(
+      child: DefaultTabController(
         length: 7,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.green[400],
             title: Text('Timetable'),
             bottom: TabBar(
               tabs: [
@@ -39,17 +45,49 @@ class _HomeState extends State<Home> {
           ),
           body: TabBarView(
             children: [
-              Container(child:Text(days[0])),
-              Container(child:Text(days[1])),
-              Container(child:Text(days[2])),
-              Container(child:Text(days[3])),
-              Container(child:Text(days[4])),
-              Container(child:Text(days[5])),
-              Container(child:Text(days[6])),
+              Container(
+                decoration: BoxDecoration(color: Colors.white),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection('Users')
+                      .doc(FirebaseAuth.instance.currentUser.uid)
+                      .collection('Monday')
+                      .snapshots(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (!snapshot.hasData) {
+                      return Center(child: CircularProgressIndicator());
+                    }
+                    return ListView(
+                      children: snapshot.data.docs.map((document) {
+                        return Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text("SLOT: ${document.id}"),
+                              Text("Time: ${document.data()[Time]}"),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
+              ),
+              Container(child: Text(days[1])),
+              Container(child: Text(days[2])),
+              Container(child: Text(days[3])),
+              Container(child: Text(days[4])),
+              Container(child: Text(days[5])),
+              Container(child: Text(days[6])),
             ],
           ),
         ),
       ),
+    ),
+    floatingActionButton: FloatingActionButton(onPressed: (){},)
     );
   }
 }
