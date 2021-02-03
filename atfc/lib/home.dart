@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +68,7 @@ class _HomeState extends State<Home> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text("SLOT: ${document.id}"),
-                                  Text("Time: ${document.data()[Time]}"),
+                                  //Text("Time: ${document.data()[Time]}"),
                                 ],
                               ),
                             );
