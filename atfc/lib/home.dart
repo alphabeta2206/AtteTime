@@ -62,8 +62,9 @@ class _HomeState extends State<Home> {
                       return ListView(
                         children: snapshot.data.docs.map((document) {
                           return Container(
+                            padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
                             width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
+                            height: 150,
                             decoration: BoxDecoration(
                             color: Colors.lightGreenAccent),
                             child: Column(
@@ -102,11 +103,10 @@ class _HomeState extends State<Home> {
                         children: snapshot.data.docs.map((document) {
                           return Container(
                             width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
+                            height: 100,
                             decoration: BoxDecoration(
                             color: Colors.lightGreenAccent),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Text("Slot Name: ${document.id}"),
                                 Text("Start Time: ${document.data()['Startingtime']}"),

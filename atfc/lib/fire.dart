@@ -13,12 +13,8 @@ Future<bool> add(String day, String name, String startingtime, String endingtime
     FirebaseFirestore.instance.runTransaction((transaction) async {
       DocumentSnapshot snapshot = await transaction.get(documentReference);
       if (!snapshot.exists) {
-        documentReference.set({'Name': name});
-        documentReference.set({'Startingtime': startingtime});
-        documentReference.set({'Endingtime': endingtime});
-        documentReference.set({'Faculty': faculty});
-        documentReference.set({'Classroom': classroom});
-        documentReference.set({'Slottype': slottype});
+        documentReference.set({'Name': name,'Startingtime': startingtime,'Endingtime': endingtime,
+        'Faculty': faculty,'Classroom': classroom,'Slottype': slottype});
         return true;
       }
     });
