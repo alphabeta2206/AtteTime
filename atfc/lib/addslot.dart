@@ -5,6 +5,7 @@ class Addslot extends StatefulWidget {
   @override
   _AddslotState createState() => _AddslotState();
 }
+
 class _AddslotState extends State<Addslot> {
   List<String> slottype = ["Theory", "Lab", "Additional"];
   String dropdownvalue = "Theory";
@@ -26,44 +27,48 @@ class _AddslotState extends State<Addslot> {
             },
             items: slottype.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(value: value, child: Text(value));
-            }),
+            }).toList(),
           ),
           Container(
-            width: MediaQuery.of(context).size.width/1.3,
+            width: MediaQuery.of(context).size.width / 1.3,
             child: TextFormField(
               controller: _name,
-              decoration: InputDecoration(
-                labelText: "Enter Slot name"
-              ),
+              decoration: InputDecoration(labelText: "Enter Slot name"),
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width/1.3,
+            width: MediaQuery.of(context).size.width / 1.3,
             child: TextFormField(
               controller: _time,
-              decoration: InputDecoration(
-                labelText: "Enter Slot Timing"
-              ),
+              decoration: InputDecoration(labelText: "Enter Slot Timing"),
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width/1.3,
+            width: MediaQuery.of(context).size.width / 1.3,
             child: TextFormField(
               controller: _facultyname,
-              decoration: InputDecoration(
-                labelText: "Enter Faculty name"
-              ),
+              decoration: InputDecoration(labelText: "Enter Faculty name"),
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width/1.3,
+            width: MediaQuery.of(context).size.width / 1.3,
             child: TextFormField(
               controller: _classroom,
-              decoration: InputDecoration(
-                labelText: "Enter Classroom"
-              ),
+              decoration: InputDecoration(labelText: "Enter Classroom"),
             ),
-          )
+          ),
+          Container(
+              width: MediaQuery.of(context).size.width / 1.4,
+              height: 45,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.lightGreenAccent),
+              child: MaterialButton(
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Add"),
+              ))
         ],
       ),
     );
