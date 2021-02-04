@@ -9,6 +9,16 @@ class Addslot extends StatefulWidget {
 class _AddslotState extends State<Addslot> {
   List<String> slottype = ["Theory", "Lab", "Additional"];
   String dropdownvalue = "Theory";
+  List<String> day = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+  ];
+  String dropdownvalue1 = "Monday";
   TextEditingController _name = TextEditingController();
   TextEditingController _time = TextEditingController();
   TextEditingController _facultyname = TextEditingController();
@@ -18,7 +28,7 @@ class _AddslotState extends State<Addslot> {
     return Material(
       child: Column(
         children: [
-          SizedBox(height:150),
+          SizedBox(height: 150),
           DropdownButton(
             value: dropdownvalue,
             onChanged: (String value) {
@@ -27,6 +37,18 @@ class _AddslotState extends State<Addslot> {
               });
             },
             items: slottype.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(value: value, child: Text(value));
+            }).toList(),
+          ),
+          SizedBox(height: 10),
+          DropdownButton(
+            value: dropdownvalue1,
+            onChanged: (String value) {
+              setState(() {
+                dropdownvalue1 = value;
+              });
+            },
+            items: day.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(value: value, child: Text(value));
             }).toList(),
           ),
@@ -58,7 +80,7 @@ class _AddslotState extends State<Addslot> {
               decoration: InputDecoration(labelText: "Enter Classroom"),
             ),
           ),
-          SizedBox(height:20),
+          SizedBox(height: 20),
           Container(
               width: MediaQuery.of(context).size.width / 1.4,
               height: 45,
