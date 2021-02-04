@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-Future<bool> add(String id, String name, String startingtime, String endingtime,
-    String faculty, String classroom, String slottype, String day) async {
+Future<bool> add(String day, String name, String startingtime, String endingtime,
+    String faculty, String classroom, String slottype) async {
   try {
     String uid = FirebaseAuth.instance.currentUser.uid;
     DocumentReference documentReference = FirebaseFirestore.instance
-        .collection('users')
+        .collection('Users')
         .doc(uid)
         .collection(day)
-        .doc(id);
+        .doc(name);
     FirebaseFirestore.instance.runTransaction((transaction) async {
       DocumentSnapshot snapshot = await transaction.get(documentReference);
       if (!snapshot.exists) {
@@ -18,6 +18,7 @@ Future<bool> add(String id, String name, String startingtime, String endingtime,
         documentReference.set({'Endingtime': endingtime});
         documentReference.set({'Faculty': faculty});
         documentReference.set({'Classroom': classroom});
+        documentReference.set({'Slottype': slottype});
         return true;
       }
     });

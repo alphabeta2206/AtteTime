@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fire.dart';
+
 class Addslot extends StatefulWidget {
   Addslot({Key key}) : super(key: key);
   @override
@@ -97,6 +99,8 @@ class _AddslotState extends State<Addslot> {
                   color: Colors.lightGreenAccent),
               child: MaterialButton(
                 onPressed: () async {
+                  await add(dropdownvalue1, _name.text, _startingtime.text, _endingtime.text, 
+                  _facultyname.text, _classroom.text, dropdownvalue);
                   Navigator.of(context).pop();
                 },
                 child: Text("Add"),
