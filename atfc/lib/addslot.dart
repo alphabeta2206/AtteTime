@@ -6,8 +6,8 @@ class Addslot extends StatefulWidget {
   _AddslotState createState() => _AddslotState();
 }
 class _AddslotState extends State<Addslot> {
-  List<String> slottype = ["Theory", "Lab"];
-  String dropwdownvalue = "Theory";
+  List<String> slottype = ["Theory", "Lab", "Additional"];
+  String dropdownvalue = "Theory";
   TextEditingController _name = TextEditingController();
   TextEditingController _time = TextEditingController();
   TextEditingController _facultyname = TextEditingController();
@@ -17,7 +17,53 @@ class _AddslotState extends State<Addslot> {
     return Material(
       child: Column(
         children: [
-
+          DropdownButton(
+            value: dropdownvalue,
+            onChanged: (String value) {
+              setState(() {
+                dropdownvalue = value;
+              });
+            },
+            items: slottype.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(value: value, child: Text(value));
+            }),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width/1.3,
+            child: TextFormField(
+              controller: _name,
+              decoration: InputDecoration(
+                labelText: "Enter Slot name"
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width/1.3,
+            child: TextFormField(
+              controller: _time,
+              decoration: InputDecoration(
+                labelText: "Enter Slot Timing"
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width/1.3,
+            child: TextFormField(
+              controller: _facultyname,
+              decoration: InputDecoration(
+                labelText: "Enter Faculty name"
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width/1.3,
+            child: TextFormField(
+              controller: _classroom,
+              decoration: InputDecoration(
+                labelText: "Enter Classroom"
+              ),
+            ),
+          )
         ],
       ),
     );
