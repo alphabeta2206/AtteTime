@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
             length: 7,
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.green[400],
+                backgroundColor: Colors.lightGreen,
                 title: Text('Timetable'),
                 bottom: TabBar(
                   tabs: [

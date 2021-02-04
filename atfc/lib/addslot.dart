@@ -18,6 +18,7 @@ class _AddslotState extends State<Addslot> {
     return Material(
       child: Column(
         children: [
+          SizedBox(height:150),
           DropdownButton(
             value: dropdownvalue,
             onChanged: (String value) {
@@ -57,6 +58,7 @@ class _AddslotState extends State<Addslot> {
               decoration: InputDecoration(labelText: "Enter Classroom"),
             ),
           ),
+          SizedBox(height:20),
           Container(
               width: MediaQuery.of(context).size.width / 1.4,
               height: 45,
