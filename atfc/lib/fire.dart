@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-Future<bool> addslt(String id, String name, String startingtime, String endingtime,
+Future<bool> add(String id, String name, String startingtime, String endingtime,
     String faculty, String classroom, String slottype, String day) async {
   try {
     String uid = FirebaseAuth.instance.currentUser.uid;
