@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                         return ListView(
                           children: snapshot.data.docs.map((document) {
                             return Container(
-                              child: Row(
+                              child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [

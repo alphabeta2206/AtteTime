@@ -20,7 +20,8 @@ class _AddslotState extends State<Addslot> {
   ];
   String dropdownvalue1 = "Monday";
   TextEditingController _name = TextEditingController();
-  TextEditingController _time = TextEditingController();
+  TextEditingController _startingtime = TextEditingController();
+  TextEditingController _endingtime = TextEditingController();
   TextEditingController _facultyname = TextEditingController();
   TextEditingController _classroom = TextEditingController();
   @override
@@ -62,8 +63,15 @@ class _AddslotState extends State<Addslot> {
           Container(
             width: MediaQuery.of(context).size.width / 1.3,
             child: TextFormField(
-              controller: _time,
-              decoration: InputDecoration(labelText: "Enter Slot Timing"),
+              controller: _startingtime,
+              decoration: InputDecoration(labelText: "Enter Starting Time"),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width / 1.3,
+            child: TextFormField(
+              controller: _endingtime,
+              decoration: InputDecoration(labelText: "Enter Ending Time"),
             ),
           ),
           Container(
