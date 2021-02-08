@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'addslot.dart';
+import 'package:backdrop/backdrop.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -22,14 +24,14 @@ class _HomeState extends State<Home> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return BackdropScaffold(
+      frontLayer: Center(
         child: DefaultTabController(
           length: 7,
           child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.lightGreen,
-              title: Text('Timetable'),
+            appBar: BackdropAppBar(
+              backgroundColor: HexColor("#FEDBD0"),
+              title: Text('Timetable',style: TextStyle(color:HexColor("#442C2E"))),
               bottom: TabBar(
                 tabs: [
                   Tab(icon: Icon(Icons.calendar_today), text: 'Mon'),
