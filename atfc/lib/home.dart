@@ -103,20 +103,23 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: 100,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: 100,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
@@ -141,21 +144,24 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
@@ -180,21 +186,24 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
@@ -219,21 +228,24 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
@@ -258,21 +270,24 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
@@ -297,21 +312,24 @@ class _HomeState extends State<Home> {
                       }
                       return ListView(
                         children: snapshot.data.docs.map((document) {
-                          return Container(
-                            width: MediaQuery.of(context).size.width/1.3,
-                            height: MediaQuery.of(context).size.height,
-                            decoration: BoxDecoration(
-                            color: Colors.lightGreenAccent),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Slot Name: ${document.id}"),
-                                Text("Start Time: ${document.data()['Startingtime']}"),
-                                Text("End Time: ${document.data()['Endingtime']}"),
-                                Text("Faculty: ${document.data()['Faculty']}"),
-                                Text("ClassRoom: ${document.data()['Classroom']}"),
-                                Text("Slot Type: ${document.data()['Slottype']}")
-                              ],
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width/1.3,
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text("Slot Name: ${document.id}"),
+                                  Text("Start Time: ${document.data()['Startingtime']}"),
+                                  Text("End Time: ${document.data()['Endingtime']}"),
+                                  Text("Faculty: ${document.data()['Faculty']}"),
+                                  Text("ClassRoom: ${document.data()['Classroom']}"),
+                                  Text("Slot Type: ${document.data()['Slottype']}")
+                                ],
+                              ),
                             ),
                           );
                         }).toList(),
