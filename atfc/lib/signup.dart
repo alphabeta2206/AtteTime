@@ -24,9 +24,9 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Atteface"),
-        backgroundColor: Colors.green[400],
+      appBar: BackdropAppBar(
+              backgroundColor: HexColor("#FEDBD0"),
+              title: Text('Register',style: TextStyle(color:HexColor("#442C2E"))),
       ),
       body: Center(
         child: ModalProgressHUD(
